@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  clooney:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clooney-agent
+    env_file:
+      - .env
+    volumes:
+      # Mount data directory to persist screenshots, DOM, and session
+      - ./data:/app/data
+      # Mount builds directory to access generated applications
+      - ./builds:/app/builds
+      # Optional: mount templates if you want to modify them
+      - ./templates:/app/templates
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Keep container running for interactive use
+    tty: true
+    stdin_open: true
+    # Uncomment to run main.py automatically
+    # command: python main.py
