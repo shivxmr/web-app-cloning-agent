@@ -1,0 +1,25 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+data/session.json
+
+# Output
+builds/
+
+# Node
+node_modules/
+.next/
+*.log
+pnpm-lock.yaml
+
+# Test Output
+data/screenshots/clone_page_test.png
+data/screenshots/clone_diff.png
